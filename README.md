@@ -2,6 +2,8 @@
 
 I built this React JS app in my spare time during my CodeClan course over the course of a week before Eurovision 2023. It's a Bingo game that gives you six random Eurovision cliches/tropes as buttons, with a view to pressing all six buttons down and then clicking the Bingo button for your reward.
 
+This repo is for me to practice continuous integration using Git Hub Actions and Cypress.
+
 ## How to Play Eurovision Bingo
 
 You can play the app [here](https://andrewblair.co.uk/apps/eurovision-bingo).
