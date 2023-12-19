@@ -10,6 +10,11 @@ describe('App', () => {
         homepage.should('contain', 'BINGO')
     });
 
+    //BingoCard
+    it('should have a How Does This work header', () => {
+      cy.get('.how-to-use-app').contains('How does this work then?')
+    })
+
     //ActiveButtons
 
     it('should have six items in the active-buttons-wrapper', () => {
