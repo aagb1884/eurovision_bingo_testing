@@ -19,6 +19,7 @@ function ActiveButtons({ cardArray, isActive, setIsActive, setNumberOfActiveCard
         <Button
           key={index}
           cliche={cliche}
+          index={index}
           isActive={isActive[cliche] || false}
           setIsActive={() => toggleButton(cliche)}
           setNumberOfActiveButtons={setNumberOfActiveCardButtons}
@@ -28,7 +29,6 @@ function ActiveButtons({ cardArray, isActive, setIsActive, setNumberOfActiveCard
       );
     });
 
-    console.log(buttons)
     
 
 

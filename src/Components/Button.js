@@ -1,4 +1,4 @@
-const Button = ({ cliche, isActive, setIsActive, numberOfActiveButtons, setNumberOfActiveButtons, checkIfBingoButtonIsActive}) => {
+const Button = ({ cliche, index, isActive, setIsActive, numberOfActiveButtons, setNumberOfActiveButtons, checkIfBingoButtonIsActive}) => {
 
     const handleClick = () => {
         setIsActive(!isActive);
@@ -18,7 +18,7 @@ const Button = ({ cliche, isActive, setIsActive, numberOfActiveButtons, setNumbe
         <div className={`grid-item ${isActive ? 'active' : ''}`}>
         <button
           onClick={handleClick}
-          className={`euro-btn ${isActive ? 'active' : ''}`}
+          className={`euro-btn ${index + 1} ${isActive ? 'active' : ''}`}
           type="button"
           data-testid="card-button"
         >

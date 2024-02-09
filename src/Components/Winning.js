@@ -1,11 +1,18 @@
+import { useState } from "react";
 import soundfile from "../audio/euphoria_excerpt.mp3";
 
 const Winning = ({checkIfBingoButtonIsActive, isBingoButtonActive}) => {
-   
+   const [showGif, setShowGif] = useState(false);
 
     function play() {
                 var audio = document.getElementById("audio");
                 audio.play();
+                setShowGif(true);
+
+                setTimeout(()=> {
+                    audio.pause();
+                    setShowGif(false);
+                }, 7000)
               }
 
  
@@ -22,7 +29,7 @@ const Winning = ({checkIfBingoButtonIsActive, isBingoButtonActive}) => {
                     disabled={!isBingoButtonActive}
                     onClick={play} 
                     >BINGO</button>
-                    
+                     {showGif && <img className="ticker-tape" src="/images/ticker_tape.gif" alt="Ticker Tape gif" />} 
              </section>
     );
     }
