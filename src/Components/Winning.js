@@ -18,7 +18,7 @@ const Winning = ({checkIfBingoButtonIsActive, isBingoButtonActive}) => {
             <button type="button" 
                     data-testid="audio-button" 
                     id="bingo" 
-                    className="bingo"
+                    className={`bingo ${isBingoButtonActive ? '' : 'disabled'}`}
                     disabled={!isBingoButtonActive}
                     onClick={play} 
                     >BINGO</button>

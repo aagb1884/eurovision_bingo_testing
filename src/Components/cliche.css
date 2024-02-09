@@ -136,6 +136,12 @@ html,body {
         cursor: pointer;  
 }
 
+.disabled {
+  background-color: grey;
+  opacity: 0.5; 
+  cursor: not-allowed; 
+}
+
 .how-to-use-app{
   margin-top: 20px;
  }

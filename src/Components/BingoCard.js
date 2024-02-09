@@ -3,11 +3,6 @@ import Winning from "./Winning";
 import ActiveButtons from "./ActiveButtons";
 import {useState} from 'react';
 
-export const handleGetNewCards = (EurovisionClicheArray) => {
-    const shuffled = [...EurovisionClicheArray].sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, 6);
-}
-
 const BingoCard = () => {
     const [isHovering, setIsHovering] = useState(false);
     const [isActive, setIsActive] = useState(false);

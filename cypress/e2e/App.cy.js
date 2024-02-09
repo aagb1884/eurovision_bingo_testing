@@ -28,6 +28,11 @@ describe('App', () => {
    });
 
 
+   it("button tests", () => {
+    cy.get('.euro-btn active').should('have.length', 6);
+    
+ });
+
    //Winning
     it("The Bingo button can't be clicked", () => {
       cy.get('.bingo').should('be.disabled')
