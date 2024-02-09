@@ -10,9 +10,8 @@ const Winning = ({checkIfBingoButtonIsActive, isBingoButtonActive}) => {
                 setShowGif(true);
 
                 setTimeout(()=> {
-                    audio.pause();
                     setShowGif(false);
-                }, 7000)
+                }, 7300)
               }
 
  
