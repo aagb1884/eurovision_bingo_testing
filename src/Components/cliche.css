@@ -137,7 +137,7 @@ html,body {
 }
 
 .disabled {
-  background-color: grey;
+  
   opacity: 0.5; 
   cursor: not-allowed; 
 }
