@@ -128,17 +128,7 @@ const BingoCard = () => {
         setIsHovering(false);
     }
 
-    // const checkIfBingoButtonIsActive = () => {
-    //     if (areAllButtonsActive === true) {
-    //         setIsBingoButtonActive(true)
-    //         console.log('bingo is active')
-    //     } else
-    //     {
-    //         setIsBingoButtonActive(false)
-    //     }
-    // }
-
-    return (
+      return (
         <section className='card-wrapper'>
           
                     <section className='how-to-use-app'>
