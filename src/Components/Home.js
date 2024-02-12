@@ -5,7 +5,7 @@ const HomePage = () => {
       <div className="eurovision-bingo-landing">
         
         
-          <header className="animate-charcter">
+          <header className="animate-character">
             <div className="animated-header">EUROVISION BINGO</div>
           </header>
 

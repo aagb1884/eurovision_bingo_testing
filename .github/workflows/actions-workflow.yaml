@@ -30,7 +30,7 @@ jobs:
         continue-on-error: true
  
       - name: Run Cypress Tests
-        run: npx cypress run App.cy.js
+        run: npx cypress run --spec "cypress/e2e/App.cy.js"
  
       - name: Stop React App
         run: pkill -f "npm start"
