@@ -13,16 +13,16 @@ const Winning = ({isBingoButtonActive}) => {
                     setShowGif(false);
                 }, 7300)
               }
-console.log("yaml")
+
               
 
     return ( 
-        <section className='bingo'>
+        <section className='bingo-win'>
             <audio id="audio" src={soundfile}>BINGO</audio>
             <button type="button" 
                     data-testid="audio-button" 
                     id="bingo" 
-                    className={`bingo ${isBingoButtonActive ? '' : 'disabled'}`}
+                    className={`bingo${isBingoButtonActive ? '' : ' disabled'}`}
                     disabled={!isBingoButtonActive}
                     onClick={play} 
                     >BINGO</button>

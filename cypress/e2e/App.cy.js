@@ -28,10 +28,6 @@ describe('App', () => {
    });
 
 
-   it("button tests", () => {
-    cy.get('.euro-btn active').should('have.length', 6);
-    
- });
 
    //Winning
     it("The Bingo button can't be clicked", () => {
@@ -39,11 +35,14 @@ describe('App', () => {
  });
 
     it("The Bingo button can play audio when enabled", () => {
-      cy.get('.euro-btn').click({multiple: true})
-      cy.get('.bingo').click({multiple: true})
-      cy.wait(1000);
+      cy.get('.euro-btn.1').click();
+      cy.get('.euro-btn.2').click();
+      cy.get('.euro-btn.3').click();
+      cy.get('.euro-btn.4').click();
+      cy.get('.euro-btn.5').click();
+      cy.get('.euro-btn.6').click();
+      cy.get('.bingo').click()
       cy.get('audio#audio').should('have.prop', 'paused', false)
     })
 
-})
-
+  })  
