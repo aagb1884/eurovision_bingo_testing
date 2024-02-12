@@ -6,8 +6,8 @@ import {useState} from 'react';
 const BingoCard = () => {
     const [isHovering, setIsHovering] = useState(false);
     const [isActive, setIsActive] = useState(false);
-    const [numberOfActiveCardButtons, setNumberOfActiveCardButtons] = useState(0);
-    const [isBingoButtonActive, setIsBingoButtonActive] = useState(false)
+    const [isBingoButtonActive, setIsBingoButtonActive] = useState(false);
+   
 
     const EurovisionClicheArray = [
         'ciabatta smelling hipster\'s folksy simpering',
@@ -119,8 +119,7 @@ const BingoCard = () => {
     const handleGetNewCards = () => {
         setCardArray(getCliches(EurovisionClicheArray, 6));
         setIsActive(false);
-        setNumberOfActiveCardButtons(0);
-    }
+        }
 
     const handleMouseOver = () => {
         setIsHovering(true);
@@ -129,15 +128,15 @@ const BingoCard = () => {
         setIsHovering(false);
     }
 
-    const checkIfBingoButtonIsActive = () => {
-        if (numberOfActiveCardButtons === 5) {
-            setIsBingoButtonActive(true)
-            console.log('bingo is active')
-        } else
-        {
-            setIsBingoButtonActive(false)
-        }
-    }
+    // const checkIfBingoButtonIsActive = () => {
+    //     if (areAllButtonsActive === true) {
+    //         setIsBingoButtonActive(true)
+    //         console.log('bingo is active')
+    //     } else
+    //     {
+    //         setIsBingoButtonActive(false)
+    //     }
+    // }
 
     return (
         <section className='card-wrapper'>
@@ -172,15 +171,10 @@ const BingoCard = () => {
             isActive={isActive}
             setIsActive={setIsActive}
             cardArray={cardArray} 
-            numberOfActiveCardButtons={numberOfActiveCardButtons}
-            setNumberOfActiveCardButtons={setNumberOfActiveCardButtons}
-            checkIfBingoButtonIsActive={checkIfBingoButtonIsActive}
+            setIsBingoButtonActive={setIsBingoButtonActive}
             />
             <Winning  
-            numberOfActiveCardButtons={numberOfActiveCardButtons}
-            setIsBingoButtonActive={setIsBingoButtonActive}
             isBingoButtonActive={isBingoButtonActive}
-            
             />
         </section>
     );

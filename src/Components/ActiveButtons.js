@@ -1,45 +1,34 @@
-import './cliche.css'
-import Button from './Button'
+import React, { useState } from 'react';
+import Button from './Button';
 
+const ActiveButtons = ({ setIsBingoButtonActive, cardArray }) => {
+    const [buttonStates, setButtonStates] = useState([false, false, false, false, false, false]);
 
-function ActiveButtons({ cardArray, isActive, setIsActive, setNumberOfActiveCardButtons, numberOfActiveCardButtons, checkIfBingoButtonIsActive}) {
+    const handleClick = (index) => {
+        const updatedButtonStates = [...buttonStates];
+        updatedButtonStates[index] = !updatedButtonStates[index];
+        setButtonStates(updatedButtonStates);
 
+        if (updatedButtonStates.every(state => state === true)) {
+            setIsBingoButtonActive(true);
+        } else {
+            setIsBingoButtonActive(false);
+        }
+    };
 
-  const toggleButton = (cliche) => {
-    setIsActive(prevState => ({
-      ...prevState,
-      [cliche]: !prevState[cliche]
-    }));
-  };
-
-
-
-  const buttons = cardArray.map((cliche, index) => {
-      return (
-        <Button
-          key={index}
-          cliche={cliche}
-          index={index}
-          isActive={isActive[cliche] || false}
-          setIsActive={() => toggleButton(cliche)}
-          setNumberOfActiveButtons={setNumberOfActiveCardButtons}
-          numberOfActiveButtons={numberOfActiveCardButtons}
-          checkIfBingoButtonIsActive={checkIfBingoButtonIsActive}
-        />
-      );
-    });
-
-    
-
-
-  return (
-    <div className='active-buttons-wrapper'>
-      {buttons}
-    </div>
-  )
-
+    return (
+        <div className='active-buttons-wrapper'>
+            {buttonStates.map((isActive, index) => (
+                <Button
+                    key={index}
+                    index={index}
+                    isActive={isActive}
+                    handleClick={() => handleClick(index)}
+                    cliche={cardArray[index]}
+                />
+            ))}
+        </div>
+    );
 }
 
-
-
-export default ActiveButtons
+export default ActiveButtons;

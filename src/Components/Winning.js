@@ -1,7 +1,7 @@
 import { useState } from "react";
 import soundfile from "../audio/euphoria_excerpt.mp3";
 
-const Winning = ({checkIfBingoButtonIsActive, isBingoButtonActive}) => {
+const Winning = ({isBingoButtonActive}) => {
    const [showGif, setShowGif] = useState(false);
 
     function play() {
@@ -14,9 +14,7 @@ const Winning = ({checkIfBingoButtonIsActive, isBingoButtonActive}) => {
                 }, 7300)
               }
 
- 
-  
-// get grid buttons working then set button below to be disabled until all six buttons are pressed/active
+              
 
     return ( 
         <section className='bingo'>
