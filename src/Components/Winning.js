@@ -13,7 +13,7 @@ const Winning = ({isBingoButtonActive}) => {
                     setShowGif(false);
                 }, 7300)
               }
-
+console.log("yaml")
               
 
     return ( 
