@@ -7,7 +7,7 @@ const BingoCard = () => {
     const [isHovering, setIsHovering] = useState(false);
     const [isActive, setIsActive] = useState(false);
     const [isBingoButtonActive, setIsBingoButtonActive] = useState(false);
-   
+    const [buttonStates, setButtonStates] = useState([false, false, false, false, false, false]);
 
     const EurovisionClicheArray = [
         'ciabatta smelling hipster\'s folksy simpering',
@@ -118,7 +118,7 @@ const BingoCard = () => {
 
     const handleGetNewCards = () => {
         setCardArray(getCliches(EurovisionClicheArray, 6));
-        setIsActive(false);
+        setButtonStates([false, false, false, false, false, false]);
         }
 
     const handleMouseOver = () => {
@@ -162,6 +162,8 @@ const BingoCard = () => {
             setIsActive={setIsActive}
             cardArray={cardArray} 
             setIsBingoButtonActive={setIsBingoButtonActive}
+            buttonStates={buttonStates}
+            setButtonStates={setButtonStates}
             />
             <Winning  
             isBingoButtonActive={isBingoButtonActive}
