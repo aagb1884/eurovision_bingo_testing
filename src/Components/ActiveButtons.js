@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Button from './Button';
 
-const ActiveButtons = ({ setIsBingoButtonActive, cardArray, buttonStates, setButtonStates }) => {
-    
+const ActiveButtons = ({ setIsBingoButtonActive, cardArray }) => {
+    const [buttonStates, setButtonStates] = useState([false, false, false, false, false, false]);
+
     const handleClick = (index) => {
         const updatedButtonStates = [...buttonStates];
         updatedButtonStates[index] = !updatedButtonStates[index];
