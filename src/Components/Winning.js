@@ -1,7 +1,7 @@
 import { useState } from "react";
 import soundfile from "../audio/euphoria_excerpt.mp3";
 
-const Winning = ({isBingoButtonActive}) => {
+const Winning = ({isBingoButtonActive, handleGetNewCards, setIsBingoButtonActive}) => {
    const [showGif, setShowGif] = useState(false);
 
     function play() {
@@ -11,6 +11,8 @@ const Winning = ({isBingoButtonActive}) => {
 
                 setTimeout(()=> {
                     setShowGif(false);
+                   handleGetNewCards();
+                    setIsBingoButtonActive(false);
                 }, 7300)
               }
 
