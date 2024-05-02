@@ -109,15 +109,15 @@ const BingoCard = () => {
         
     ]
 
-    function getCliches(EurovisionClicheArray, num) {
-        const shuffled = [...EurovisionClicheArray].sort(() => 0.5 - Math.random());
+    function getCliches(num) {
+        const shuffled = EurovisionClicheArray.sort(() => 0.5 - Math.random());
         return shuffled.slice(0, num);
     }
 
-    const [cardArray, setCardArray] = useState(getCliches(EurovisionClicheArray, 6));
+    const [cardArray, setCardArray] = useState(getCliches(6));
 
     const handleGetNewCards = () => {
-        setCardArray(getCliches(EurovisionClicheArray, 6));
+          setCardArray(getCliches(6));
         setIsActive(false);
         }
 
@@ -165,6 +165,8 @@ const BingoCard = () => {
             />
             <Winning  
             isBingoButtonActive={isBingoButtonActive}
+            setIsBingoButtonActive={setIsBingoButtonActive}
+            handleGetNewCards={handleGetNewCards}
             />
         </section>
     );
