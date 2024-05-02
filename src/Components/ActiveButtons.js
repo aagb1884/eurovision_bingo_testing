@@ -1,28 +1,18 @@
 import React, { useState } from 'react';
 import Button from './Button';
 
-const ActiveButtons = ({ setIsBingoButtonActive, cardArray }) => {
-    const [buttonStates, setButtonStates] = useState([false, false, false, false, false, false]);
+const ActiveButtons = ({ handleClick, cardArray, buttonStates }) => {
+    
 
-    const handleClick = (index) => {
-        const updatedButtonStates = [...buttonStates];
-        updatedButtonStates[index] = !updatedButtonStates[index];
-        setButtonStates(updatedButtonStates);
-
-        if (updatedButtonStates.every(state => state === true)) {
-            setIsBingoButtonActive(true);
-        } else {
-            setIsBingoButtonActive(false);
-        }
-    };
+ 
 
     return (
         <div className='active-buttons-wrapper'>
-            {buttonStates.map((isActive, index) => (
+            {buttonStates.map((buttonActive, index) => (
                 <Button
                     key={index}
                     index={index}
-                    isActive={isActive}
+                    isActive={buttonActive}
                     handleClick={() => handleClick(index)}
                     cliche={cardArray[index]}
                 />

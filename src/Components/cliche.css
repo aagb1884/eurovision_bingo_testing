@@ -129,7 +129,6 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
   border-radius: 0.2em;
   border: 0;
   margin: auto;
-  background-color: #5d5d57;
   color:black;
   text-decoration: none;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
@@ -139,6 +138,11 @@ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 .bingo.disabled {
   opacity: 0.2; 
   cursor: not-allowed; 
+  background-color: #5d5d57;
+}
+
+.bingo {
+  background-color: #fff800;
 }
 
 img.ticker-tape{

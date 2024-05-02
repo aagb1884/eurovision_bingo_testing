@@ -5,9 +5,8 @@ import {useState} from 'react';
 
 const BingoCard = () => {
     const [isHovering, setIsHovering] = useState(false);
-    const [isActive, setIsActive] = useState(false);
     const [isBingoButtonActive, setIsBingoButtonActive] = useState(false);
-   
+    const [buttonStates, setButtonStates] = useState([false, false, false, false, false, false]);
 
     const EurovisionClicheArray = [
         'ciabatta smelling hipster\'s folksy simpering',
@@ -109,16 +108,17 @@ const BingoCard = () => {
         
     ]
 
-    function getCliches(EurovisionClicheArray, num) {
-        const shuffled = [...EurovisionClicheArray].sort(() => 0.5 - Math.random());
+    function getCliches(num) {
+        const shuffled = EurovisionClicheArray.sort(() => 0.5 - Math.random());
         return shuffled.slice(0, num);
     }
 
-    const [cardArray, setCardArray] = useState(getCliches(EurovisionClicheArray, 6));
+    const [cardArray, setCardArray] = useState(getCliches(6));
 
     const handleGetNewCards = () => {
-        setCardArray(getCliches(EurovisionClicheArray, 6));
-        setIsActive(false);
+            setCardArray(getCliches(6));
+            setButtonStates(Array(6).fill(false));
+            setIsBingoButtonActive(false);
         }
 
     const handleMouseOver = () => {
@@ -127,6 +127,18 @@ const BingoCard = () => {
     const handleMouseOut = () => {
         setIsHovering(false);
     }
+
+    const handleClick = (index) => {
+        const updatedButtonStates = [...buttonStates];
+       updatedButtonStates[index] = !updatedButtonStates[index];
+       setButtonStates(updatedButtonStates);
+       
+       if (updatedButtonStates.every(state => state === true)) {
+           setIsBingoButtonActive(true);
+       } else {
+           setIsBingoButtonActive(false);
+       }
+   };
 
       return (
         <section className='card-wrapper'>
@@ -158,13 +170,14 @@ const BingoCard = () => {
            <br />
             <button type="button" data-testid="get-cards-button" id="get-cards" className="btn" onClick={handleGetNewCards}>Get New Card</button>
             <ActiveButtons 
-            isActive={isActive}
-            setIsActive={setIsActive}
+            handleClick={handleClick}
             cardArray={cardArray} 
-            setIsBingoButtonActive={setIsBingoButtonActive}
+            buttonStates={buttonStates}
             />
             <Winning  
             isBingoButtonActive={isBingoButtonActive}
+            setIsBingoButtonActive={setIsBingoButtonActive}
+            handleGetNewCards={handleGetNewCards}
             />
         </section>
     );
