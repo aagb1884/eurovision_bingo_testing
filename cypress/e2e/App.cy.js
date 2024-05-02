@@ -24,7 +24,12 @@ describe('App', () => {
     
     //Button
     it("Can be clicked", () => {
-      cy.get('.euro-btn').click({multiple: true})
+      cy.get('.euro-btn.1').click();
+      cy.get('.euro-btn.2').click();
+      cy.get('.euro-btn.3').click();
+      cy.get('.euro-btn.4').click();
+      cy.get('.euro-btn.5').click();
+      cy.get('.euro-btn.6').click();
    });
 
 

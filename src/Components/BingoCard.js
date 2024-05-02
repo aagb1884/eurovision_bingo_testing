@@ -117,7 +117,7 @@ const BingoCard = () => {
 
     const handleGetNewCards = () => {
         setCardArray(getCliches(EurovisionClicheArray, 6));
-        setIsActive(false);
+        setIsBingoButtonActive(false);
         }
 
     const handleMouseOver = () => {
