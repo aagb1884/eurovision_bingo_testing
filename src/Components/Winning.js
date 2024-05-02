@@ -11,8 +11,6 @@ const Winning = ({isBingoButtonActive, handleGetNewCards, setIsBingoButtonActive
 
                 setTimeout(()=> {
                     setShowGif(false);
-                    handleGetNewCards();
-                    setIsBingoButtonActive(false);
                 }, 7300)
               }
 

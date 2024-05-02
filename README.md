@@ -8,7 +8,7 @@ This repo is for me to practice continuous integration using Git Hub Actions and
 
 You can play the app [here](https://andrewblair.co.uk/apps/eurovision-bingo).
 
-(I used [Surge for the hosting](https://gist.github.com/ebectar/6b44cf75f63df629d2fe9e0e46bb1dec))
+(I initially used [Surge for the hosting](https://gist.github.com/ebectar/6b44cf75f63df629d2fe9e0e46bb1dec) before moving it to my own website)
 
 On a desktop, if you hover over 'How does this work then?' the following text appears:
 
@@ -26,13 +26,18 @@ As you have probably worked out, the text describes how the app works.
 ### Future Development
 
 - I need to clean up the code (it was refactored to a single page app quite late in the day, meaning a few files are no longer being used).
-- I would like to disable the 'Bingo' button until you have clicked all six of your Bingo card buttons.
-- I hope to add a little ticker tape animation when you click 'Bingo'.
+- I would like to disable the 'Bingo' button until you have clicked all six of your Bingo card buttons (DONE)
+- I hope to add a little ticker tape animation when you click 'Bingo' (DONE)
 - I could add a backend so that people could save their scores (highest scores being the shortest time between getting a new Bingo card and clicking 'Bingo')
 
 ## Eurovision Bingo Code
 
-I apologise for the wet code, once I have finished my CodeClan course I will dry it.
+The initial version was quite wet code, but I've been working on it when adding it to my website and then [turning it into a mobile app](https://github.com/aagb1884/EuroBingoAppExpo).
+
+[iOS version](https://apps.apple.com/pl/app/eurovision-bingo/id6479647899)
+[Android version](https://play.google.com/store/apps/details?id=com.aagb1884.eurovision_bingo)
+
+Adding testing has also made me tweak the code so different buttons have different classNames (iterating through numbers based on their index) so I don't have to just press all the main buttons at once when testing. The mobile version also helped me work out different features, specifically the state governing whether the Bingo button was active.
 
 ## CSS
 
